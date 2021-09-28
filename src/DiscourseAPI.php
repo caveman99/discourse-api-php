@@ -895,7 +895,7 @@ class DiscourseAPI {
 	 *
 	 * @throws Exception
 	 */
-	private function _getRequest(
+	public function _getRequest(
 		string $requestString,
 		array $paramArray = [],
 		string $apiUser = 'system',
@@ -936,7 +936,7 @@ class DiscourseAPI {
 	 * @return stdClass
 	 * @throws Exception
 	 */
-	private function _completeCurlCall( string $url, string $httpMethod, array $httpHeaders, $query = '' ) {
+	public function _completeCurlCall( string $url, string $httpMethod, array $httpHeaders, $query = '' ) {
 		$ch = curl_init();
 
 		curl_setopt( $ch, CURLOPT_URL, $url );
@@ -990,7 +990,7 @@ class DiscourseAPI {
 	 *
 	 * @throws Exception
 	 */
-	private function _putpostRequest(
+	public function _putpostRequest(
 		string $requestString,
 		array $paramArray,
 		string $apiUser = 'system',
@@ -1053,7 +1053,7 @@ class DiscourseAPI {
 	 * @return stdClass
 	 * @throws Exception
 	 */
-	private function _deleteRequest( string $reqString, array $paramArray, string $apiUser = 'system' ): stdClass {
+	public function _deleteRequest( string $reqString, array $paramArray, string $apiUser = 'system' ): stdClass {
 		return $this->_putpostRequest( $reqString, $paramArray, $apiUser, 'DELETE' );
 	}
 
@@ -1067,7 +1067,7 @@ class DiscourseAPI {
 	 * @return stdClass
 	 * @throws Exception
 	 */
-	private function _putRequest( string $reqString, array $paramArray, string $apiUser = 'system' ): stdClass {
+	public function _putRequest( string $reqString, array $paramArray, string $apiUser = 'system' ): stdClass {
 		return $this->_putpostRequest( $reqString, $paramArray, $apiUser, 'PUT' );
 	}
 
@@ -1081,7 +1081,7 @@ class DiscourseAPI {
 	 * @return stdClass
 	 * @throws Exception
 	 */
-	private function _postRequest( string $reqString, array $paramArray, string $apiUser = 'system' ): stdClass {
+	public function _postRequest( string $reqString, array $paramArray, string $apiUser = 'system' ): stdClass {
 		return $this->_putpostRequest( $reqString, $paramArray, $apiUser, 'POST' );
 	}
 
