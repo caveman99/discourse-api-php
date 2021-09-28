@@ -541,7 +541,7 @@ class DiscourseAPI {
 	) {
 
 		// we need to call hp.json to get a challenge string
-		$challengeStringObject = $this->_getRequest( '/users/hp.json' );
+		$challengeStringObject = $this->_getRequest( '/session/hp.json' );
 		if ( $challengeStringObject->http_code !== 200 ) {
 			return false;
 		}
